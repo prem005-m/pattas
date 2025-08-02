@@ -97,110 +97,90 @@ body {
 }
 
 .product {
-      background: #fff;
-      margin: 12px;
-      padding: 12px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      display: flex;
-      gap: 12px;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+}
 
-    .product img {
-      width: 60px;
-      height: auto;
-      object-fit: contain;
-      border-radius: 4px;
-    }
+.product img {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+}
 
-    .info {
-      flex: 1;
-    }
+.info {
+  flex-grow: 1;
+  padding: 10px;
+}
 
-    .eng-title {
-      font-size: 14px;
-      font-weight: 700;
-      margin: 0;
-      color: #111;
-    }
+.eng-title {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0;
+}
 
-    .tam-title {
-      font-size: 13px;
-      margin: 4px 0 8px;
-      font-weight: 500;
-    }
+.tam-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
 
-    .price-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 16px;
+  gap: 5px;
+}
 
-    .price-row del {
-      color: #999;
-      font-size: 13px;
-    }
+.price-label {
+  flex: 1;
+  text-align: left;
+  color: #000;
+}
 
-    .price-value {
-      color: #6c0aa6;
-      font-weight: 700;
-      font-size: 14px;
-    }
+.price del {
+  flex: 1;
+  text-align: center;
+  color: #999;
+}
 
-    .discount {
-      background: #e53935;
-      color: #fff;
-      font-size: 11px;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-weight: 600;
-      align-self: flex-start;
-    }
+.price .final-price {
+  flex: 1;
+  text-align: right;
+  color: #6c0aa6;
+  font-weight: bold;
+}
 
-    .quantity-controls {
-      display: flex;
-      align-items: center;
-      margin: 10px 0;
-      gap: 6px;
-    }
 
-    .quantity-controls::before {
-      content: 'Quantity:';
-      font-size: 13px;
-      margin-right: 4px;
-      color: #444;
-    }
+.quantity-controls {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+  margin: 0 10px;
+}
 
-    .quantity-controls button {
-      background: #6c0aa6;
-      color: white;
-      border: none;
-      padding: 4px 10px;
-      font-size: 14px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
+.quantity-controls button {
+  background: #db2edb;
+  color: #0a0a0a;
+  border: none;
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .quantity-controls input {
-      width: 40px;
-      text-align: center;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 4px;
-    }
-
-    .subtotal {
-      font-weight: bold;
-      font-size: 14px;
-      color: #111;
-    }
-
-    .subtotal::before {
-      content: 'Subtotal: ';
-      font-weight: 400;
-      color: #444;
-    }
+.quantity-controls input {
+  width: 40px;
+  text-align: center;
+  font-size: 16px;
+}
 
 .total {
   width: 60px;
@@ -234,7 +214,19 @@ body {
 
 
 
-
+  .info-label {
+        display: flex;
+        justify-content: space-between;
+        margin: 4px 0;
+      }
+      .info-label span:first-child {
+        font-weight: 500;
+        color: #444;
+      }
+      .info-label span:last-child {
+        font-weight: 600;
+        color: #000;
+      }
 
 
 
