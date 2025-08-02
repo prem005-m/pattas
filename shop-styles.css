@@ -1,0 +1,274 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  /* background-image: linear-gradient(#997bad, #457c81, #FCB045);  */
+  background-color: #fff;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar-nav .nav-link:hover {
+  color: purple;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar {
+  transition: top 0.3s ease-in-out;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(  0px);
+}
+
+.logo {
+  height: 60px;
+}
+
+.navbar a {
+  margin: 0 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+.navbar a:nth-child(3) {
+  color: purple;
+  font-weight: bold;
+}
+
+.search-popup {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000000aa;
+  z-index: 9999;
+}
+
+.search-popup input {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+}
+
+.search-popup .close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.filter {
+  padding: 20px;
+  text-align: center;
+}
+
+.form-select{
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.category-title {
+  text-align: center;
+  color: #0f0f0f;
+  background-color: #e4a0e4;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 50px;
+  margin: 20px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.product {
+      background: #fff;
+      margin: 12px;
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      display: flex;
+      gap: 12px;
+    }
+
+    .product img {
+      width: 60px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    .eng-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0;
+      color: #111;
+    }
+
+    .tam-title {
+      font-size: 13px;
+      margin: 4px 0 8px;
+      font-weight: 500;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .price-row del {
+      color: #999;
+      font-size: 13px;
+    }
+
+    .price-value {
+      color: #6c0aa6;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .discount {
+      background: #e53935;
+      color: #fff;
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      align-self: flex-start;
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      gap: 6px;
+    }
+
+    .quantity-controls::before {
+      content: 'Quantity:';
+      font-size: 13px;
+      margin-right: 4px;
+      color: #444;
+    }
+
+    .quantity-controls button {
+      background: #6c0aa6;
+      color: white;
+      border: none;
+      padding: 4px 10px;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .quantity-controls input {
+      width: 40px;
+      text-align: center;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 4px;
+    }
+
+    .subtotal {
+      font-weight: bold;
+      font-size: 14px;
+      color: #111;
+    }
+
+    .subtotal::before {
+      content: 'Subtotal: ';
+      font-weight: 400;
+      color: #444;
+    }
+
+.total {
+  width: 60px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.checkout-bar {
+  display: flex;
+  justify-content: center;
+  padding: 15px ;
+  border-top: 2px solid #ccc;
+  backdrop-filter: blur(20px);
+  position: sticky;
+  bottom: 0;
+}
+
+.checkout-bar button {
+  background: #db6ddb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* existing styles preserved */
+
+
+
+
+.product-list {
+  margin-top: 160px; /* Adjust depending on navbar + filter height */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
