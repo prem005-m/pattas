@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sparkler Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/ff171bc0fd.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="shop-styles.css">
+  <style>
+    .info-label {
+      display: flex;
+      justify-content: space-between;
+      margin: 4px 0;
+    }
+    .info-label span:first-child {
+      font-weight: 500;
+      color: #444;
+    }
+    .info-label span:last-child {
+      font-weight: 600;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ml-auto" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown">Shop</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Shop full width</a>
+            <a class="dropdown-item" href="#">My account</a>
+            <a class="dropdown-item" href="#">Checkout</a>
+            <a class="dropdown-item" href="#">Cart</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="shop.html">Quick Buy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="searchIcon">
+            <i class="fas fa-search"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="searchPopup" class="search-popup">
+    <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchPage()">
+    <span class="close-btn" onclick="toggleSearch()">&times;</span>
+  </div>
+
+  <div class="filter">
+    <label>Filter by Category:</label>
+    <select class="form-select">
+      <option selected>Choose a category</option>
+      <option>All Categories</option>
+      <option>Sparklers</option>
+      <option>Crackers</option>
+      <option>Rockets</option>
+      <option>Ground Chakkars</option>
+      <option>Flower Pots</option>
+      <option>Airborne</option>
+      <option>Miscellaneous</option>
+      <option>Specials</option>
+      <option>Bulk Orders</option>
+      <option>Gift Packs</option>
+      <option>New Arrivals</option>
+    </select>
+  </div>
+
+  <h2 class="category-title text-center">SPARKLERS</h2>
+
+  <div class="product-list">
+    <div class="product" data-price="7.40">
+      <img src="https://majesticpyro.com/wp-content/uploads/2024/11/10-cm-Electric-1-300x300.png" alt="Product">
+      <div class="info">
+        <h3 class="eng-title">7 CM Electric Sparklers | 1 Box | 10 Pcs</h3>
+        <p class="tam-title">7 செ.மீ சாதா கம்பி</p>
+        <div class="info-label"><span>Price</span><span><del>₹39.00</del> ₹7.40</span></div>
+        <div class="info-label quantity-controls">
+          <span>Quantity</span>
+          <span>
+            <button onclick="changeQty(this, -1)">−</button>
+            <input type="number" value="0" readonly>
+            <button onclick="changeQty(this, 1)">+</button>
+          </span>
+        </div>
+        <div class="info-label"><span>Subtotal</span><span class="total">₹0.00</span></div>
+      </div>
+      <div class="discount">81% OFF</div>
+    </div>
+
+    <div class="product" data-price="8.50">
+      <img src="https://majesticpyro.com/wp-content/uploads/2024/11/10-cm-Electric-1-300x300.png" alt="Product">
+      <div class="info">
+        <h3 class="eng-title">7 CM Coloured Sparklers | 1 Box | 10 Pcs</h3>
+        <p class="tam-title">7 செ.மீ கலர் கம்பி</p>
+        <div class="info-label"><span>Price</span><span><del>₹45.00</del> ₹8.50</span></div>
+        <div class="info-label quantity-controls">
+          <span>Quantity</span>
+          <span>
+            <button onclick="changeQty(this, -1)">−</button>
+            <input type="number" value="0" readonly>
+            <button onclick="changeQty(this, 1)">+</button>
+          </span>
+        </div>
+        <div class="info-label"><span>Subtotal</span><span class="total">₹0.00</span></div>
+      </div>
+      <div class="discount">81% OFF</div>
+    </div>
+  </div>
+
+  <footer class="checkout-bar">
+    <div>Total Quantity: <span id="totalQty">0</span></div>
+    <div>Total: ₹<span id="totalPrice">0.00</span></div>
+    <button>Proceed to Checkout</button>
+  </footer>
+
+  <script src="shop-script.js"></script>
+</body>
+</html>

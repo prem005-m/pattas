@@ -77,23 +77,40 @@ document.getElementById('searchIcon').addEventListener('click', function(e) {
 // New: Page search filtering
 function searchPage() {
   const term = document.getElementById("searchInput").value.toLowerCase();
+  const suggestionsContainer = document.getElementById("searchSuggestions");
+  suggestionsContainer.innerHTML = "";
+
   const products = document.querySelectorAll(".product");
+  let matchCount = 0;
+
   products.forEach(product => {
     const text = product.innerText.toLowerCase();
-    product.style.display = text.includes(term) ? "flex" : "none";
+    const title = product.querySelector(".eng-title")?.innerText || "";
+
+    if (text.includes(term)) {
+      product.style.display = "flex";
+      if (term.length > 0 && matchCount < 10) {
+        const suggestion = document.createElement("div");
+        suggestion.textContent = title;
+        suggestion.onclick = () => {
+          document.getElementById("searchInput").value = title;
+          searchPage();
+        };
+        suggestionsContainer.appendChild(suggestion);
+        matchCount++;
+      }
+    } else {
+      product.style.display = "none";
+    }
   });
+
+  if (term.length === 0) {
+    suggestionsContainer.innerHTML = "";
+    products.forEach(p => p.style.display = "flex");
+  }
 }
 
-// New: Navbar hide on scroll down, show on scroll up
-let lastScrollTop = 0;
-const navbar = document.querySelector('.navbar');
 
-window.addEventListener("scroll", function () {
-  let st = window.pageYOffset || document.documentElement.scrollTop;
-  if (st > lastScrollTop) {
-    navbar.style.top = "-100px";
-  } else {
-    navbar.style.top = "0";
-  }
-  lastScrollTop = st <= 0 ? 0 : st;
-});
+
+
+
